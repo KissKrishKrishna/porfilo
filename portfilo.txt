@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Krishna B | Software & Technology Portfolio</title>
+
+<meta name="description"
+      content="Professional portfolio of Krishna B - MCA student specializing in software development, networking, AI and data-driven applications.">
+
+<style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family:
+            Inter,
+            "Segoe UI",
+            Roboto,
+            Arial,
+            sans-serif;
+
+        background: #080b12;
+        color: #e8edf5;
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    :root {
+        --bg: #080b12;
+        --bg-soft: #0d111a;
+        --card: #111722;
+        --border: rgba(255,255,255,0.09);
+
+        --text: #f5f7fb;
+        --muted: #9aa5b5;
+
+        --primary: #4f8cff;
+        --primary-light: #76a7ff;
+
+        --max-width: 1180px;
+    }
+
+    /* =====================================================
+       BACKGROUND EFFECT
+    ===================================================== */
+
+    body::before {
+        content: "";
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        top: -200px;
+        left: -200px;
+
+        background: rgba(79,140,255,0.10);
+        filter: blur(120px);
+        border-radius: 50%;
+
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    body::after {
+        content: "";
+        position: fixed;
+        width: 450px;
+        height: 450px;
+        right: -200px;
+        bottom: -200px;
+
+        background: rgba(99,102,241,0.08);
+        filter: blur(120px);
+        border-radius: 50%;
+
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        z-index: 999;
+
+        background: rgba(8,11,18,0.80);
+        backdrop-filter: blur(18px);
+
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    nav {
+        max-width: var(--max-width);
+        margin: auto;
+
+        height: 72px;
+
+        padding: 0 25px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+    }
+
+    .logo span {
+        color: var(--primary);
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+
+        list-style: none;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        color: var(--muted);
+        transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+        color: white;
+    }
+
+    .nav-resume {
+        padding: 9px 17px;
+
+        border: 1px solid var(--border);
+        border-radius: 8px;
+
+        color: white !important;
+    }
+
+    .nav-resume:hover {
+        border-color: var(--primary);
+        color: var(--primary-light) !important;
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+        max-width: var(--max-width);
+        min-height: 100vh;
+
+        margin: auto;
+        padding: 150px 25px 90px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .availability {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+
+        padding: 7px 13px;
+
+        border: 1px solid rgba(255,255,255,0.09);
+        border-radius: 50px;
+
+        color: #aab4c4;
+        font-size: 13px;
+
+        background: rgba(255,255,255,0.025);
+
+        margin-bottom: 25px;
+    }
+
+    .status-dot {
+        width: 7px;
+        height: 7px;
+
+        background: #3ddc84;
+        border-radius: 50%;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 7vw, 82px);
+
+        line-height: 1.02;
+
+        letter-spacing: -3px;
+
+        color: white;
+
+        margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+        color: var(--primary);
+    }
+
+    .hero-subtitle {
+        font-size: 22px;
+
+        color: #c2cad7;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        max-width: 720px;
+
+        font-size: 17px;
+
+        color: var(--muted);
+
+        margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 12px 21px;
+
+        border-radius: 8px;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        transition: 0.25s;
+    }
+
+    .btn-primary {
+        background: var(--primary);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+    }
+
+    .btn-outline {
+        border: 1px solid var(--border);
+        color: #dce3ed;
+    }
+
+    .btn-outline:hover {
+        border-color: var(--primary);
+        color: var(--primary-light);
+    }
+
+    /* =====================================================
+       SOCIALS
+    ===================================================== */
+
+    .socials {
+        display: flex;
+        gap: 20px;
+
+        margin-top: 35px;
+    }
+
+    .socials a {
+        font-size: 14px;
+        color: #8995a8;
+
+        transition: 0.25s;
+    }
+
+    .socials a:hover {
+        color: white;
+    }
+
+    /* =====================================================
+       GENERAL SECTIONS
+    ===================================================== */
+
+    section {
+        max-width: var(--max-width);
+
+        margin: auto;
+
+        padding: 105px 25px;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-label {
+        color: var(--primary-light);
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+    }
+
+    .section-title {
+        font-size: 38px;
+
+        letter-spacing: -1px;
+
+        color: white;
+
+        margin-top: 7px;
+    }
+
+    .section-description {
+        max-width: 650px;
+
+        color: var(--muted);
+
+        margin-top: 12px;
+    }
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about-grid {
+        display: grid;
+
+        grid-template-columns: 1.3fr 0.7fr;
+
+        gap: 50px;
+    }
+
+    .about-text p {
+        color: #aab4c4;
+
+        font-size: 16px;
+
+        margin-bottom: 18px;
+    }
+
+    .about-facts {
+        display: grid;
+        gap: 12px;
+    }
+
+    .fact {
+        padding: 17px;
+
+        border: 1px solid var(--border);
+
+        border-radius: 10px;
+
+        background: rgba(255,255,255,0.025);
+    }
+
+    .fact small {
+        display: block;
+
+        color: #758196;
+
+        font-size: 11px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+    }
+
+    .fact strong {
+        display: block;
+
+        margin-top: 3px;
+
+        color: #e9eef7;
+
+        font-size: 14px;
+    }
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+
+    .skills-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 16px;
+    }
+
+    .skill-card {
+        padding: 25px;
+
+        border: 1px solid var(--border);
+
+        border-radius: 12px;
+
+        background: var(--card);
+
+        transition: 0.3s;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-4px);
+
+        border-color:
+            rgba(79,140,255,0.35);
+    }
+
+    .skill-card h3 {
+        font-size: 17px;
+
+        color: white;
+
+        margin-bottom: 10px;
+    }
+
+    .skill-card p {
+        color: var(--muted);
+
+        font-size: 14px;
+    }
+
+    /* =====================================================
+       PROJECTS
+    ===================================================== */
+
+    .projects {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+    .project-card {
+        position: relative;
+
+        padding: 32px;
+
+        min-height: 320px;
+
+        display: flex;
+        flex-direction: column;
+
+        border: 1px solid var(--border);
+
+        border-radius: 14px;
+
+        background: var(--card);
+
+        overflow: hidden;
+
+        transition: 0.3s;
+    }
+
+    .project-card::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 2px;
+
+        background: var(--primary);
+
+        transform: scaleX(0);
+
+        transform-origin: left;
+
+        transition: 0.3s;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+
+        border-color:
+            rgba(79,140,255,0.30);
+    }
+
+    .project-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .project-number {
+        color: var(--primary-light);
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+    }
+
+    .project-card h3 {
+        color: white;
+
+        font-size: 23px;
+
+        margin: 14px 0;
+    }
+
+    .project-card p {
+        color: var(--muted);
+
+        font-size: 14px;
+    }
+
+    .project-tech {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        margin-top: auto;
+
+        padding-top: 25px;
+    }
+
+    .project-tech span {
+        padding: 5px 9px;
+
+        border-radius: 5px;
+
+        background: rgba(79,140,255,0.08);
+
+        color: #a7c5ff;
+
+        font-size: 11px;
+    }
+
+    /* =====================================================
+       EDUCATION / EXPERIENCE
+    ===================================================== */
+
+    .timeline {
+        border-left:
+            1px solid #263142;
+
+        padding-left: 30px;
+    }
+
+    .timeline-item {
+        position: relative;
+
+        margin-bottom: 42px;
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+        content: "";
+
+        position: absolute;
+
+        width: 9px;
+        height: 9px;
+
+        border-radius: 50%;
+
+        background: var(--primary);
+
+        left: -35px;
+        top: 9px;
+    }
+
+    .timeline-date {
+        color: var(--primary-light);
+
+        font-size: 12px;
+
+        font-weight: 600;
+    }
+
+    .timeline-item h3 {
+        color: white;
+
+        font-size: 19px;
+
+        margin: 5px 0;
+    }
+
+    .timeline-item p {
+        color: var(--muted);
+
+        font-size: 14px;
+    }
+
+    /* =====================================================
+       CERTIFICATIONS
+    ===================================================== */
+
+    .certifications {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .certificate {
+        display: flex;
+
+        align-items: center;
+
+        gap: 13px;
+
+        padding: 17px;
+
+        border: 1px solid var(--border);
+
+        border-radius: 10px;
+
+        background: rgba(255,255,255,0.025);
+
+        color: #cbd3df;
+
+        font-size: 14px;
+    }
+
+    .certificate-icon {
+        width: 30px;
+        height: 30px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        border-radius: 7px;
+
+        background:
+            rgba(79,140,255,0.10);
+
+        color: var(--primary-light);
+    }
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-section {
+        text-align: center;
+
+        padding-bottom: 120px;
+    }
+
+    .contact-box {
+        padding: 65px 30px;
+
+        border: 1px solid var(--border);
+
+        border-radius: 16px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(79,140,255,0.08),
+                rgba(255,255,255,0.02)
+            );
+    }
+
+    .contact-box h2 {
+        font-size: 42px;
+
+        letter-spacing: -1px;
+
+        color: white;
+
+        margin-bottom: 12px;
+    }
+
+    .contact-box p {
+        max-width: 600px;
+
+        margin: auto;
+
+        color: var(--muted);
+
+        margin-bottom: 28px;
+    }
+
+    .contact-info {
+        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+        margin-top: 25px;
+    }
+
+    .contact-info a {
+        padding: 9px 15px;
+
+        border: 1px solid var(--border);
+
+        border-radius: 7px;
+
+        color: #b6c0cf;
+
+        font-size: 13px;
+    }
+
+    .contact-info a:hover {
+        border-color: var(--primary);
+
+        color: white;
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+        border-top: 1px solid rgba(255,255,255,0.06);
+
+        text-align: center;
+
+        padding: 28px;
+
+        color: #657084;
+
+        font-size: 12px;
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media(max-width: 850px) {
+
+        .nav-links {
+            display: none;
+        }
+
+        .hero {
+            min-height: auto;
+
+            padding-top: 140px;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .skills-grid {
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+        .projects {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media(max-width: 600px) {
+
+        .hero h1 {
+            font-size: 52px;
+
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+        }
+
+        section {
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+
+        .skills-grid,
+        .certifications {
+            grid-template-columns: 1fr;
+        }
+
+        .section-title {
+            font-size: 31px;
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+        }
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header>
+
+```
+<nav>
+
+    <a href="#home" class="logo">
+        Krishna<span>.</span>
+    </a>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+        <li>
+            <a href="Krishna_Resume.pdf"
+               class="nav-resume"
+               target="_blank">
+                Resume
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+```
+
+</header>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<main>
+
+<section class="hero" id="home">
+
+```
+<div class="hero-content">
+
+    <div class="availability">
+
+        <span class="status-dot"></span>
+
+        Open to opportunities
+
+    </div>
+
+
+    <h1>
+
+        Krishna
+        <span>B.</span>
+
+    </h1>
+
+
+    <div class="hero-subtitle">
+
+        MCA Student · Developer · Networking Enthusiast
+
+    </div>
+
+
+    <p class="hero-description">
+
+        I build practical technology solutions across
+        web development, AI-powered applications,
+        networking and data-driven systems.
+
+        Currently pursuing my Master of Computer Applications
+        and continuously developing my technical and
+        problem-solving skills.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a href="#projects"
+           class="btn btn-primary">
+
+            View My Work →
+
+        </a>
+
+
+        <a href="#contact"
+           class="btn btn-outline">
+
+            Get In Touch
+
+        </a>
+
+    </div>
+
+
+    <div class="socials">
+
+        <a href="mailto:krishkrishna3107@gamil.com">
+            Email
+        </a>
+
+        <a href="https://linkedin.com/in/Krishnab"
+           target="_blank">
+            LinkedIn
+        </a>
+
+        <a href="tel:+919361136661">
+            Phone
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+```
+<div class="section-header">
+
+    <div class="section-label">
+        About
+    </div>
+
+    <h2 class="section-title">
+        A little about me
+    </h2>
+
+</div>
+
+
+<div class="about-grid">
+
+    <div class="about-text">
+
+        <p>
+            I am currently pursuing a Master of Computer
+            Applications at Sona College of Technology,
+            Salem.
+        </p>
+
+        <p>
+            My technical interests include software development,
+            computer networking, data analysis, cloud-based
+            applications and cybersecurity.
+        </p>
+
+        <p>
+            Through academic projects and internship experience,
+            I have worked on practical problems involving
+            enterprise networking, AI-based demand forecasting
+            and network security.
+        </p>
+
+    </div>
+
+
+    <div class="about-facts">
+
+        <div class="fact">
+
+            <small>Current Degree</small>
+
+            <strong>
+                Master of Computer Applications
+            </strong>
+
+        </div>
+
+
+        <div class="fact">
+
+            <small>College</small>
+
+            <strong>
+                Sona College of Technology
+            </strong>
+
+        </div>
+
+
+        <div class="fact">
+
+            <small>Primary Interests</small>
+
+            <strong>
+                Development · Networking · AI · Data
+            </strong>
+
+        </div>
+
+
+        <div class="fact">
+
+            <small>Career Areas</small>
+
+            <strong>
+                Software · Data · IT · Systems
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+```
+<div class="section-header">
+
+    <div class="section-label">
+        Expertise
+    </div>
+
+    <h2 class="section-title">
+        Technical Skills
+    </h2>
+
+    <p class="section-description">
+        A combination of programming, networking,
+        web development and technology fundamentals.
+    </p>
+
+</div>
+
+
+<div class="skills-grid">
+
+
+    <div class="skill-card">
+
+        <h3>Programming</h3>
+
+        <p>
+            Python · C · Java
+        </p>
+
+    </div>
+
+
+    <div class="skill-card">
+
+        <h3>Web Development</h3>
+
+        <p>
+            HTML5 · CSS3 · JavaScript
+        </p>
+
+    </div>
+
+
+    <div class="skill-card">
+
+        <h3>Networking</h3>
+
+        <p>
+            Routing · Switching · IP Addressing ·
+            OSPF · DHCP · DNS
+        </p>
+
+    </div>
+
+
+    <div class="skill-card">
+
+        <h3>Security</h3>
+
+        <p>
+            Network Monitoring · Network Security ·
+            VLAN · ACL
+        </p>
+
+    </div>
+
+
+    <div class="skill-card">
+
+        <h3>Cloud & Data</h3>
+
+        <p>
+            Cloud Computing · Firebase · SQL Server
+        </p>
+
+    </div>
+
+
+    <div class="skill-card">
+
+        <h3>IT Support</h3>
+
+        <p>
+            Hardware Troubleshooting ·
+            IP Configuration · Computer Cabling
+        </p>
+
+    </div>
+
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+```
+<div class="section-header">
+
+    <div class="section-label">
+        Selected Work
+    </div>
+
+    <h2 class="section-title">
+        Projects
+    </h2>
+
+    <p class="section-description">
+        Practical projects developed as part of my
+        academic and technical learning.
+    </p>
+
+</div>
+
+
+<div class="projects">
+
+
+    <article class="project-card">
+
+        <span class="project-number">
+            01 / NETWORKING
+        </span>
+
+        <h3>
+            Automated VLAN & Routing
+            Configuration Simulator
+        </h3>
+
+        <p>
+            Built a simulated enterprise network using
+            VLANs, inter-VLAN routing and OSPF.
+            Developed Python scripts to automate
+            network configuration generation and
+            validated connectivity across network
+            segments.
+        </p>
+
+
+        <div class="project-tech">
+
+            <span>Python</span>
+            <span>Cisco Packet Tracer</span>
+            <span>VLAN</span>
+            <span>OSPF</span>
+
+        </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+        <span class="project-number">
+            02 / ARTIFICIAL INTELLIGENCE
+        </span>
+
+        <h3>
+            AI-Based Smart Inventory
+            Management & Demand Forecasting
+        </h3>
+
+        <p>
+            Developed an inventory management system
+            incorporating AI-based demand forecasting.
+            PatchTST is used for product-level demand
+            prediction using historical sales data.
+        </p>
+
+
+        <div class="project-tech">
+
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>PatchTST</span>
+            <span>SQLite</span>
+
+        </div>
+
+    </article>
+
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience">
+
+```
+<div class="section-header">
+
+    <div class="section-label">
+        Experience
+    </div>
+
+    <h2 class="section-title">
+        Internship
+    </h2>
+
+</div>
+
+
+<div class="timeline">
+
+    <div class="timeline-item">
+
+        <div class="timeline-date">
+            AUGUST — PRESENT
+        </div>
+
+        <h3>
+            Virtual Internship —
+            Cybersecurity & Network Security
+        </h3>
+
+        <p>
+            Cisco-affiliated program focused on
+            cybersecurity and networking concepts.
+        </p>
+
+        <p>
+            Worked on insider threat and unauthorized
+            access prevention using VLAN and ACL
+            concepts in Cisco Packet Tracer.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+```
+<div class="section-header">
+
+    <div class="section-label">
+        Education
+    </div>
+
+    <h2 class="section-title">
+        Academic Background
+    </h2>
+
+</div>
+
+
+<div class="timeline">
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-date">
+            2025 — 2027
+        </div>
+
+        <h3>
+            Master of Computer Applications
+        </h3>
+
+        <p>
+            Sona College of Technology (Autonomous),
+            Salem
+        </p>
+
+        <p>
+            CGPA: 7.4
+        </p>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-date">
+            2022 — 2025
+        </div>
+
+        <h3>
+            Bachelor of Computer Applications
+        </h3>
+
+        <p>
+            Aruna Vidhya Arts & Science College,
+            Tiruvanamalai
+        </p>
+
+        <p>
+            CGPA: 7.9
+        </p>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-date">
+            2021 — 2022
+        </div>
+
+        <h3>
+            Higher Secondary Certificate
+        </h3>
+
+        <p>
+            Bharath Vidhya Mandhir Hr. Sec. School
+        </p>
+
+        <p>
+            Percentage: 63.6%
+        </p>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="timeline-date">
+            2019 — 2020
+        </div>
+
+        <h3>
+            SSLC
+        </h3>
+
+        <p>
+            Annai Velankanni Matric. School
+        </p>
+
+        <p>
+            Percentage: 74%
+        </p>
+
+    </div>
+
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+
+<section>
+
+```
+<div class="section-header">
+
+    <div class="section-label">
+        Certifications
+    </div>
+
+    <h2 class="section-title">
+        Professional Learning
+    </h2>
+
+</div>
+
+
+<div class="certifications">
+
+
+    <div class="certificate">
+
+        <div class="certificate-icon">
+            ✓
+        </div>
+
+        Introduction to Networks — Cisco
+
+    </div>
+
+
+    <div class="certificate">
+
+        <div class="certificate-icon">
+            ✓
+        </div>
+
+        Switching, Routing and Wireless Essentials — Cisco
+
+    </div>
+
+
+    <div class="certificate">
+
+        <div class="certificate-icon">
+            ✓
+        </div>
+
+        Enterprise Networking, Security and Automation — Cisco
+
+    </div>
+
+
+    <div class="certificate">
+
+        <div class="certificate-icon">
+            ✓
+        </div>
+
+        Introduction to Data Science — Cisco
+
+    </div>
+
+
+    <div class="certificate">
+
+        <div class="certificate-icon">
+            ✓
+        </div>
+
+        Introduction to Modern AI — Cisco
+
+    </div>
+
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact"
+         class="contact-section">
+
+```
+<div class="contact-box">
+
+    <div class="section-label">
+        Contact
+    </div>
+
+    <h2>
+        Let's work together.
+    </h2>
+
+    <p>
+        Interested in connecting, discussing a project,
+        or exploring an opportunity? Feel free to reach out.
+    </p>
+
+
+    <a href="mailto:krishkrishna3107@gamil.com"
+       class="btn btn-primary">
+
+        Send Me an Email →
+
+    </a>
+
+
+    <div class="contact-info">
+
+        <a href="mailto:krishkrishna3107@gamil.com">
+            krishkrishna3107@gamil.com
+        </a>
+
+        <a href="tel:+919361136661">
+            +91 93611 36661
+        </a>
+
+        <a href="https://linkedin.com/in/Krishnab"
+           target="_blank">
+            LinkedIn
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+</main>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+```
+© 2026 Krishna B. All rights reserved.
+```
+
+</footer>
+
+</body>
+</html>
